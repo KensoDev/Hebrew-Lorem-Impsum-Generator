@@ -1,6 +1,8 @@
 HebLorenIpsumGenerator::Application.routes.draw do
   root to: "home#index"
   match '/generate' => "home#generate"
+  match '/simple' => "home#simple"
+  match '/generate_simple' => "home#generate_simple"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
