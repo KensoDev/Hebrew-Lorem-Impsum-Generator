@@ -15,13 +15,9 @@ class HomeController < ApplicationController
     @new_content = ""
 
     num_rows.to_i.downto(0).each do
-      @new_content << "INSERT into #{table_name} (#{column_name}) VALUES"
-      @new_content << "("
-        0.upto(rand(paragraphs.length)).each do |i|
-         @new_content << "'#{paragraphs[i].to_s}<br />'"
-        end
-      @new_content << ");"
-      @new_content << "\n"
+      row_content = ""
+      0.upto(rand(paragraphs.length)).each {|i| row_content << "#{paragraphs[i].to_s}<br />" }
+      @new_content << "INSERT into #{table_name} (#{column_name}) VALUES('#{row_content}');\n"
     end
   end
 end
