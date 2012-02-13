@@ -12,3 +12,9 @@
  *= require twitter/bootstrap
  *= require_tree .
 */
+.hebrew_textarea {
+	width: 500px; 
+	height: 400px; 
+	text-align: right !important; 
+	direction: rtl;
+}
